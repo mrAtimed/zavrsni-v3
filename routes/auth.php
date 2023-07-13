@@ -40,9 +40,8 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
 // GET rute 403
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Route::get('/login', function () {
-  return abort(403,"SOON (tm)");
-})->middleware('guest');
+Route::view('login', "pages.login")->middleware("guest");
+Route::view('dashboard', "pages.dashboard")->middleware("auth");
 
 Route::get('/forgot-password', function () {
   return abort(403);

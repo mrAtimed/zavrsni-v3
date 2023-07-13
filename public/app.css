@@ -15,6 +15,11 @@ p{
 	top: 0;
 }
 
+.reset{
+	padding: 0;
+	margin: 0;
+}
+
 footer div div small:last-child{
 	text-align: right;
 }

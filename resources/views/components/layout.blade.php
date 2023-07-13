@@ -8,8 +8,8 @@
   {{-- /////////////////////////////////////////////////////////// --}}
   <title>Zavrsni v3 - Hrvoje Krhač</title>
   {{-- /////////////////////////////////////////////////////////// --}}
-  <link rel="stylesheet" href="pico.css">
-  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="/pico.css">
+  <link rel="stylesheet" href="/app.css">
 </head>
 <body>
 	<x-nav>
@@ -21,7 +21,7 @@
     </section>
   </main>
   <x-footer>
-    <i>Lorem ipsum dolor sit..</i>
+    <i><abbr title="Information technology">IT</abbr> should be simple!</i>
   </x-footer>
 </body>
 </html>
