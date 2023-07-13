@@ -1,0 +1,20 @@
+main{
+	min-height: 80vh;
+}
+p{
+	text-align: justify;
+}
+
+.bg{
+	background-color: var(--card-background-color);
+}
+
+
+.sticky{
+	position: sticky;
+	top: 0;
+}
+
+footer div div small:last-child{
+	text-align: right;
+}
