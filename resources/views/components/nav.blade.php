@@ -3,7 +3,13 @@
     <nav>
       <ul>
         <li>
-            <strong>WIP</strong>
+          @guest
+          <a href="/"><strong>Zavrsni</strong></a>
+          @endguest
+          @auth
+          <a href="/dashboard" class="contrast outline" role="button"><strong >Dashboard</strong></a>
+              
+          @endauth
         </li>
       </ul>
       <ul>
@@ -11,14 +17,14 @@
         <li><a href="/login"class="secondary">Log in</a></li>
         @endguest
         @auth
-        <li >
-          <a href="/dashboard" class="secondary">
-          Dashboard</a>
+        <li><a href="/u/" >Users</a></li>
+        <li><a href="/r/" >Roles</a></li>
+        <li><a href="/p/" >Pages</a></li>
         </li>
         <li>
-          <form method="POST" action="/logout/" class="reset">
+          <form method="POST" action="/logout/" class="reset" >
             @csrf
-            <a href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();" class="secondary">
+            <a href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();" class="secondary outline" role="button">
               Log Out
             </a>
           </form>

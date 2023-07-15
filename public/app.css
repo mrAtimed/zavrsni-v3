@@ -4,6 +4,20 @@ main{
 p{
 	text-align: justify;
 }
+img{
+	width: 100%;
+	border-radius: 2rem 2rem 0 0;
+}
+
+.ico{
+	border-radius: 0;
+	height: 100%;
+	object-fit: cover;
+}
+
+.gap{
+	gap: 2rem;
+}
 
 .bg{
 	background-color: var(--card-background-color);
