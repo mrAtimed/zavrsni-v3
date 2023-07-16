@@ -22,7 +22,7 @@
 			</b>
 		</td>
 		<td>
-			<a {{ $role['name']=="Admin" ? "disabled class=secondary" :'href='. $role['id'] }}>edit</a>
+			<a {{ $role['name']=="Admin" ? "disabled class=secondary" :'href=/r/'. $role['id'] . "/edit" }}>edit</a>
 		</td>
 		<td>
 			<a {{ $role['name']=="Admin" ? "disabled class=secondary" :'href='. $role['id'] }}>del</a>

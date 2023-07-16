@@ -14,7 +14,8 @@
       </ul>
       <ul>
         @guest
-        <li><a href="/login"class="secondary">Log in</a></li>
+        <li><a href="/login" role="button">Log in</a></li>
+        {{$slot}}
         @endguest
         @auth
         <li><a href="/u/" >Users</a></li>
@@ -30,6 +31,7 @@
           </form>
         </li>
         @endauth
+
       </ul>
     </nav>
 
