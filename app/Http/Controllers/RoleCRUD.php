@@ -49,6 +49,9 @@ class RoleCRUD extends Controller
 
     public function destroy(string $id)
     {
-        //
+        Role::where("id", $id)->delete();
+
+        return redirect('/r/');
+
     }
 }
