@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Page;
-use Illuminate\Support\Facades\Storage;
-use PHPUnit\Framework\MockObject\Stub\ReturnReference;
 
 class PageCRUD extends Controller
 {
@@ -29,14 +27,14 @@ class PageCRUD extends Controller
         $data->slug = $q->get("slug");
         $data->img = $q->get("img");
         $data->text = $q->get("text");
-        // $data->save();
+        $data->save();
 
-        return dd($q->all());
+        return redirect("/p/");
     }
 
     public function show(string $id)
     {
-        return abort(403, 'lakse buraz?');
+        return Abort(403);
     }
 
     public function edit(string $id)
@@ -47,18 +45,21 @@ class PageCRUD extends Controller
 
     public function update(Request $request, string $id)
     {
-        $Myroutes = Page::find($id);
-        $Myroutes->start = $request->input('start');
-        $Myroutes->end = $request->input('end');
-        $Myroutes->waypoints = $request->input('waypoints');
+        Page::where("id", $id)->update([
+            "name" => $request->name,
+            "slug" => $request->slug,
+            "img" => $request->img,
+            "text" => $request->text,
+        ]);
 
-        $Myroutes->save();
+        return redirect('/p/');
 
-        return redirect('/p/{{$id}}/edit/');
     }
 
     public function destroy(string $id)
     {
-        //
+        Page::where("id", $id)->delete();
+        return redirect('/p/');
+
     }
 }

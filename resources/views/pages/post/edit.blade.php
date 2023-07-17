@@ -1,11 +1,9 @@
 <x-layout>
   <article>
 
-    <form method="POST" action="{{ route('role.update',['id' => $id]) }}">
-      @method('PATCH')
+    <form method="POST" action="/p/{{$data['id']}}">
       @csrf
-      <input type="hidden" name="_method" value="PUT" />
-
+      @method('PATCH')
       <input type="hidden" name="id" value="{{$data['id']}}">
       <label for="name">Editing:</label>
       <input type="text" name="name" value="{{$data['name']}}">

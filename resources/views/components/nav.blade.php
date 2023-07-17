@@ -7,10 +7,14 @@
           <a href="/"><strong>Zavrsni</strong></a>
           @endguest
           @auth
-          <a href="/dashboard" class="contrast outline" role="button"><strong >Dashboard</strong></a>
+          <a href="/dashboard"><strong >Dashboard</strong></a>
               
           @endauth
         </li>
+        @auth
+        <li>{{ Auth::user()->email }}</li>
+          
+        @endauth
       </ul>
       <ul>
         @guest
@@ -25,6 +29,7 @@
         <li>
           <form method="POST" action="/logout/" class="reset" >
             @csrf
+            
             <a href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();" class="secondary outline" role="button">
               Log Out
             </a>
