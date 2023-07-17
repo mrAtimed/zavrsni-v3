@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\User;
+use App\Models\Role;
 class UserCrud extends Controller
 {
     /**
@@ -11,7 +12,7 @@ class UserCrud extends Controller
      */
     public function index()
     {
-        return "nekaj";
+        return view("pages/users.index", ['data' => User::all(), 'roles' => Role::  all()]);
     }
 
     /**
