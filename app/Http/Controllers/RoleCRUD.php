@@ -14,6 +14,7 @@ class RoleCRUD extends Controller
 
     public function create()
     {
+        $roles = Role::all();
         return view('pages.roles.create');
     }
 

@@ -8,16 +8,13 @@
           @endguest
           @auth
           <a href="/dashboard"><strong >Dashboard</strong></a>
-              
+          {{-- <li><small>({{ Auth::user()->email }})</small></li> --}}
           @endauth
         </li>
-        @auth
-        <li>{{ Auth::user()->email }}</li>
-          
-        @endauth
       </ul>
       <ul>
         @guest
+        <li><a href="/register/">Register</a></li>
         <li><a href="/login" role="button">Log in</a></li>
         {{$slot}}
         @endguest
@@ -25,12 +22,13 @@
         <li><a href="/u/" >Users</a></li>
         <li><a href="/r/" >Roles</a></li>
         <li><a href="/p/" >Pages</a></li>
+        <li><a href="/n/" >Nav</a></li>
         </li>
         <li>
           <form method="POST" action="/logout/" class="reset" >
             @csrf
             
-            <a href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();" class="secondary outline" role="button">
+            <a href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();" class="contrast outline" role="button">
               Log Out
             </a>
           </form>

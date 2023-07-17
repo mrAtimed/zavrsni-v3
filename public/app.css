@@ -8,7 +8,9 @@ img{
 	width: 100%;
 	border-radius: 2rem 2rem 0 0;
 }
-
+dialog > .wide{
+	min-width: 50vw !important;
+}
 .ico{
 	border-radius: 0;
 	height: 100%;

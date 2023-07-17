@@ -1,4 +1,10 @@
 <x-layout>
+  <div class="bg">
+		<article>
+
+			<a href="/p/create" role="button">Add new</a>
+		</article>
+	</div>
   <table>
     <thead class="bg">
       <th>IMG</th>

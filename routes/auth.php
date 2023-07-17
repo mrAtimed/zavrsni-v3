@@ -41,7 +41,9 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Route::view('login', "pages.login")->middleware("guest");
-Route::view('dashboard', "pages.dashboard")->middleware("auth");
+Route::view('dashboard', "pages.dashboard", )->middleware("auth");
+Route::get('register', [RegisteredUserController::class, 'create']);
+
 
 Route::get('/forgot-password', function () {
   return abort(403);

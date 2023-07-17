@@ -6,9 +6,10 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\PageCRUD;
 use App\Http\Controllers\RoleCRUD;
 use App\Http\Controllers\UserCrud;
+use App\Http\Controllers\NavMenuController;
 
 use App\Models\Page;
-
+use App\Models\NavMenu;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,14 +25,15 @@ use App\Models\Page;
 //     return ['Laravel' => app()->version()];
 // });
 
-
-Route::view('/','pages.homepage');
+$data = NavMenu::with('page')->get();
+Route::view('/','pages.homepage', compact('data'));
 
 require __DIR__.'/auth.php';
 
 Route::resource("/p", PageCRUD::class)->middleware("auth");
 Route::resource("/r", RoleCRUD::class)->middleware("auth");
 Route::resource("/u", UserCrud::class)->middleware("auth");
+Route::resource("/n", NavMenuController::class)->middleware("auth");
 
 
 /////////////////////////////////////////////////////////////////////////////

@@ -1,6 +1,9 @@
 <x-layout>
   <div class="bg">
-    <a href="/r/create/" role="button">Add new</a>
+    <article>
+
+      <a href="/r/create/" role="button">Add new</a>
+    </article>
   </div>
   <table>
     <thead class="bg">
