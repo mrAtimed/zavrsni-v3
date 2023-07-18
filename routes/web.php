@@ -36,7 +36,7 @@ Route::resource("/u", UserCrud::class)->middleware("auth");
 Route::resource("/n", NavMenuController::class)->middleware("auth");
 
 
-/////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
 $dataPage = Page::get();
 
 if (isset($dataPage)) {
@@ -50,6 +50,5 @@ if (isset($dataPage)) {
 
     Route::get("/{page}", PageController::class)->where('page', $filter);
     
-    //TODO osmisliti kako da resolva slug konflikte.. osim prefiksa sufiksa
 
 };

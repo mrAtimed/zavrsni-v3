@@ -9,7 +9,6 @@
       </header>
       <form method="POST" action="/n">
         @csrf
-        @method('PATCH')
         <label for="name">Nav Title</label>
         <input type="text" name="name" value={{$item->name}} >
         <label for="slug">Page</label>

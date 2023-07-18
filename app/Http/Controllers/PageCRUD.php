@@ -59,7 +59,7 @@ class PageCRUD extends Controller
     public function destroy(string $id)
     {
         Page::where("id", $id)->delete();
-        return redirect('/p/');
+        return redirect('/p');
 
     }
 }

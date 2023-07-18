@@ -32,7 +32,7 @@
         <form method="POST" class="reset" action="/n/{{$link->id }}">
           @csrf
           @method('DELETE')
-          <a href='/n/{{$link['id']}}' onclick="event.preventDefault();this.closest('form').submit();">
+          <a href='/n/{{$link->id }}' onclick="event.preventDefault();this.closest('form').submit();">
             DELETE
           </a>
         </form>

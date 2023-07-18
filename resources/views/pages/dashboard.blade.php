@@ -1,12 +1,15 @@
 <x-layout>
-  
+
   <article>
     <hgroup>
-      <h1>TODO:</h1>
-      <ul>
-        <li>think of something to put here..</li>
-        <li>do the user nav..</li>
-      </ul>
+      <h2>Logged in</h2>
+      <p>
+        <b>
+          
+          {{Auth::user()->name;}}
+        </b><br>
+        {{Auth::user()->email;}}
+      </p>
     </hgroup>
     <progress></progress>
   </article>

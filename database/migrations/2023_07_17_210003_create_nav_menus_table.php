@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('nav_menus', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string("name");
             $table->foreignId("page_id")->constrained("pages");
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

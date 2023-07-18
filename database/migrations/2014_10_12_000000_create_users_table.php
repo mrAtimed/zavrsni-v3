@@ -20,7 +20,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->foreignid("role_id")->constrained('roles')->default('2');
-
+            
         });
     }
 

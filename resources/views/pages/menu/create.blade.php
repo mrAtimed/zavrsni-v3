@@ -5,20 +5,20 @@
       <header>
         <br>
         <a href="{{ url()->previous() }}" aria-label="Close" class="close"></a>
-        <b>Edit Nav - <i>{{$item->name}}</i></b>
+        <b>Create new page</b>
       </header>
       <form method="POST" action="/n">
         @csrf
-        @method('PATCH')
         <label for="name">Nav Title</label>
-        <input type="text" name="name" value={{$item->name}} >
+        <input type="text" name="name">
         <label for="slug">Page</label>
         <select name="page_id" id="">
+          <option>Select Page</option>
 
           @foreach($data as $page)
 
-          <option value="{{ $page->id }}" {{ $page->id == $item->id ? 'selected' : '' }}>
-            ID:{{ $page->id }} - {{ $page->name }} ( /{{$page->slug}} )
+          <option value="{{ $page->page->id }}">
+            ID:{{ $page->page->id }} - {{ $page->page->name }} ( /{{$page->page->slug}} )
           </option>
           @endforeach
         </select>
