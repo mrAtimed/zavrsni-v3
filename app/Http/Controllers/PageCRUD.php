@@ -29,7 +29,7 @@ class PageCRUD extends Controller
         $data->text = $q->get("text");
         $data->save();
 
-        return redirect("/p/");
+        return redirect("/p");
     }
 
     public function show(string $id)
@@ -39,7 +39,7 @@ class PageCRUD extends Controller
 
     public function edit(string $id)
     {
-        $q = Page::find($id);
+        $q = Page::findOrFail($id);
         return view('pages.post.edit', ['data' => $q->getOriginal()]);
     }
 
@@ -52,7 +52,7 @@ class PageCRUD extends Controller
             "text" => $request->text,
         ]);
 
-        return redirect('/p/');
+        return redirect('/p');
 
     }
 

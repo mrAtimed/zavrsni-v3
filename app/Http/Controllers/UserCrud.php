@@ -40,7 +40,7 @@ class UserCrud extends Controller
         $user->role = $request->input('role');
         $user->password = Hash::make($request->input('password_confirmation'));
         $user->save();
-        return redirect('/u/');
+        return redirect('/u');
     }
 
     /**
@@ -67,13 +67,11 @@ class UserCrud extends Controller
     public function update(Request $req, string $id)
     {
         $user = User::findOrFail($id);
-
-        // Update the user with the submitted form data
         $user->name = $req->input('name');
         $user->email = $req->input('email');
         $user->role_id = $req->input('role');
         $user->save();
-        return redirect("/u/");
+        return redirect("/u");
     }
 
     /**
@@ -82,6 +80,6 @@ class UserCrud extends Controller
     public function destroy(string $id)
     {
         User::destroy($id);
-        return redirect('/u/');
+        return redirect('/u');
     }
 }

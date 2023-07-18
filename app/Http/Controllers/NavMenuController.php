@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\NavMenu;
+use App\Models\Page;
 use Illuminate\Http\Request;
+
 
 class NavMenuController extends Controller
 {
@@ -21,7 +23,8 @@ class NavMenuController extends Controller
      */
     public function create()
     {
-        //
+        $data = NavMenu::with('page')->get();
+        return view("pages.nav.create", compact('data'));
     }
 
     /**
@@ -29,7 +32,11 @@ class NavMenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new NavMenu();
+        $user->name = $request->input('name');
+        $user->page_id = $request->input('page_id');
+        $user->save();
+        return redirect('/n');
     }
 
     /**
@@ -37,23 +44,32 @@ class NavMenuController extends Controller
      */
     public function show(NavMenu $navMenu)
     {
-        //
+        return abort(403);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(NavMenu $navMenu)
-    {
-        //
+    public function edit(string $id)
+    {   
+        $item = NavMenu::find($id);
+        $data = Page::all();
+        
+        // return dd($); 
+        return view('pages.nav.edit', compact('data', 'item'));
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, NavMenu $navMenu)
+    public function update(Request $req, NavMenu $navMenu)
     {
-        //
+        $user = NavMenu::findOrFail($navMenu);
+        $user->name = $req->input('name');
+        $user->role = $req->input('role_id');
+        $user->save();
+        return redirect("/n");
     }
 
     /**
@@ -62,6 +78,6 @@ class NavMenuController extends Controller
     public function destroy(NavMenu $navMenu)
     {
         NavMenu::destroy($navMenu);
-        return redirect('/u/');
+        return redirect('/n');
     }
 }

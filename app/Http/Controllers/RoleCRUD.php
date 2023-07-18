@@ -24,7 +24,7 @@ class RoleCRUD extends Controller
         $data = new Role;
         $data->name = $q->get("name");
         $data->save();
-        return redirect('/r/');
+        return redirect('/r');
     }
 
     public function show(string $id)
@@ -45,13 +45,13 @@ class RoleCRUD extends Controller
             "name" => $request->name,
         ]);
 
-        return redirect('/r/');
+        return redirect('/r');
     }
 
     public function destroy(string $id)
     {
         Role::where("id", $id)->delete();
-        return redirect('/r/');
+        return redirect('/r');
 
     }
 }

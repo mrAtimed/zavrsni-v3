@@ -7,15 +7,15 @@
   </div>
   <table>
     <thead class="bg">
-      <th>SLUG</th>
       <th>NAME</th>
+      <th>SLUG</th>
       <th colspan="2"><small>CONTROLS</small></th>
     </thead>
     @foreach($data as $link)
     <tr>
       <td>
         <b>
-          {{$link->page->name}}
+          {{$link->name}}
         </b>
       </td>
       <td>

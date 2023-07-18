@@ -42,7 +42,7 @@
 			<form method="POST" class="reset" action="/u/{{$dat['id']}}">
 				@csrf
 				@method('DELETE')
-				<a href='{{'/u/'.$dat['id']}}' onclick="event.preventDefault();this.closest('form').submit();">
+				<a href='{{'/u'.$dat['id']}}' onclick="event.preventDefault();this.closest('form').submit();">
 					DELETE
 				</a>
 			</form>

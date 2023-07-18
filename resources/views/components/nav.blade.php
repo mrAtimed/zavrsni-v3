@@ -3,13 +3,7 @@
     <nav>
       <ul>
         <li>
-          @guest
           <a href="/"><strong>Zavrsni</strong></a>
-          @endguest
-          @auth
-          <a href="/dashboard"><strong >Dashboard</strong></a>
-          {{-- <li><small>({{ Auth::user()->email }})</small></li> --}}
-          @endauth
         </li>
       </ul>
       <ul>

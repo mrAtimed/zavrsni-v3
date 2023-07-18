@@ -69,7 +69,7 @@ class DatabaseSeeder extends Seeder
 
             ], [
                 'name' => "Testing me",
-                'page_id' => "1",
+                'page_id' => "2",
 
             ]
 
