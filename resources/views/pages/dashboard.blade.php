@@ -5,10 +5,9 @@
       <h2>Logged in</h2>
       <p>
         <b>
-          
-          {{Auth::user()->name;}}
+          {{Auth::user()->name }}
         </b><br>
-        {{Auth::user()->email;}}
+        {{Auth::user()->email }}
       </p>
     </hgroup>
     <progress></progress>
